@@ -1,11 +1,11 @@
 import { defineStore } from 'pinia';
 import groupBy from 'lodash/groupBy';
-import type { ProductType} from './store.types';
+import type { ProductType } from './store.types';
 
 type Store = {
   step: number;
   lineItems: ProductType[];
-}
+};
 
 export const useCartStore = defineStore('cart', {
   state: (): Store => {
@@ -25,7 +25,7 @@ export const useCartStore = defineStore('cart', {
     },
   },
   actions: {
-    addToCart(item:ProductType) {
+    addToCart(item: ProductType) {
       this.lineItems.push(item);
     },
     proceedToCheckout() {

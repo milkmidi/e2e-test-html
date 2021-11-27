@@ -12,6 +12,13 @@ module.exports = {
       jsx: true,
     },
   },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
   extends: [
     // prettier-ignore
     'airbnb-base',
@@ -38,6 +45,16 @@ module.exports = {
       {
         argsIgnorePattern: '^h$',
         varsIgnorePattern: '^h$',
+      },
+    ],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
       },
     ],
   },
