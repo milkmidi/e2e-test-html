@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import Item from './Item.vue';
 import { useCartStore } from '../store';
 
@@ -9,17 +9,13 @@ const cartData = [
   { title: 'HW0110', price: 300 },
   { title: 'HW0111', price: 100 },
 ];
-
 </script>
 
 <template>
   <section data-name="Cart">
-    <div class="row">
-      <template
-        v-for="item in cartData"
-        :key="item.title"
-      >
-        <div class="col-3">
+    <div class="flex flex-wrap -m-2">
+      <template v-for="item in cartData" :key="item.title">
+        <div class="w-1/4 p-2">
           <Item
             :data-sku="item.title"
             :data-price="item.price"
@@ -32,7 +28,3 @@ const cartData = [
     </div>
   </section>
 </template>
-
-<style>
-
-</style>

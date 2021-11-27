@@ -1,25 +1,23 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+<script setup lang="ts">
+import { defineAsyncComponent } from 'vue';
 
 import Cart from './components/Cart.vue';
-import Checkout from './components/Checkout.vue';
-import CartDrawer from './components/CartDrawer.vue';
+
 import { useCartStore } from './store';
+
+const Checkout = defineAsyncComponent(() => import('./components/Checkout.vue'));
+const CartDrawer = defineAsyncComponent(() => import('./components/CartDrawer.vue'));
 
 const cart = useCartStore();
 </script>
 
 <template>
-  <div class="container">
-    <h1 class="display-1">
-      BigPayPay
-    </h1>
+  <div class="container mx-auto">
+    <h1 class="text-7xl font-bold mb-5 py-5"> BigPayPay </h1>
     <CartDrawer v-if="cart.step === 0" />
     <Cart v-if="cart.step === 0" />
     <Checkout v-if="cart.step === 1" />
   </div>
 </template>
 
-<style>
-</style>
+<style></style>

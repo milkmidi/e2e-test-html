@@ -1,6 +1,11 @@
 import { reactive, onMounted } from 'vue';
 
-function fetchData() {
+type UserData = {
+  name: string;
+  age: number;
+}
+
+const fetchData = (): Promise<UserData> => {
   const mockData = {
     name: 'milkmidi',
     age: 18,
@@ -10,16 +15,16 @@ function fetchData() {
       resolve(mockData);
     }, 2000);
   });
+};
+
+export interface UseFetchDataType {
+  isLoading : boolean;
+  userData: UserData;
 }
 
-// export interface UseFetchDataType {
-//   isLoading : boolean;
-//   userData: UserData;
-// }
-
 const useFetchData = () => {
-  const state = reactive({
-    userData: {},
+  const state = reactive<UseFetchDataType>({
+    userData: {} as UserData,
     isLoading: false,
   });
   onMounted(async () => {

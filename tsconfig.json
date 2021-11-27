@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    // https://zhuanlan.zhihu.com/p/348959109
+    // 允許從沒有設置默認導出的模塊中默認導入。這並不影響代碼的輸出，僅為了類型檢查。
+    "allowSyntheticDefaultImports": true,
+    // 解析非相對模塊名的基準目錄
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    // 從 tslib 導入輔助工具函數（比如 __extends， __rest等）
+    "importHelpers": true,
+    // 指定生成哪個模塊系統代碼
+    "module": "esnext",
+    // 決定如何處理模塊。
+    "moduleResolution": "node",
+    // 啟用所有嚴格類型檢查選項。
+    // 啟用 --strict相當於啟用 --noImplicitAny, --noImplicitThis, --alwaysStrict， 
+    // --strictNullChecks和 --strictFunctionTypes和--strictPropertyInitialization。
+    "strict": true,
+    // 生成相應的 .map文件。
+    "sourceMap": true,
+    // 忽略所有的聲明文件（ *.d.ts）的類型檢查。
+    "skipLibCheck": true,
+    // 指定ECMAScript目標版本 
+    "target": "esnext",
+    // 要包含的類型聲明文件名列表
+    "types": [
+    ],
+    "isolatedModules": true,
+    // 模塊名到基於 baseUrl的路徑映射的列表。
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    // 編譯過程中需要引入的庫文件的列表。
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable",
+      "ScriptHost"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/shims-vue.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
