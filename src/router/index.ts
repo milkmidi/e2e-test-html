@@ -19,7 +19,6 @@ const router = createRouter({
 });
 
 router.beforeEach((to) => {
-  // ...
   const { hasItems } = useCartStore();
   if (to.path === '/checkout' && !hasItems) {
     console.log(1);

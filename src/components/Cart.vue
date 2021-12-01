@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Item from './Item.vue';
+import CartItem from './CartItem.vue';
 import { useCartStore } from '../store';
 
 const cart = useCartStore();
@@ -16,7 +16,7 @@ const cartData = [
     <div class="flex flex-wrap -m-2">
       <template v-for="item in cartData" :key="item.title">
         <div class="w-1/4 p-2">
-          <Item
+          <CartItem
             :data-sku="item.title"
             :data-price="item.price"
             :title="item.title"

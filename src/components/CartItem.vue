@@ -1,8 +1,14 @@
 <script setup lang="ts">
 // eslint-disable-next-line no-undef
 defineProps({
-  title: String,
-  price: Number,
+  title: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
 });
 </script>
 
