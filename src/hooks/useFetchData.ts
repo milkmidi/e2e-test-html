@@ -3,7 +3,7 @@ import { reactive, onMounted } from 'vue';
 type UserData = {
   name: string;
   age: number;
-}
+};
 
 const fetchData = (): Promise<UserData> => {
   const mockData = {
@@ -18,7 +18,7 @@ const fetchData = (): Promise<UserData> => {
 };
 
 export interface UseFetchDataType {
-  isLoading : boolean;
+  isLoading: boolean;
   userData: UserData;
 }
 

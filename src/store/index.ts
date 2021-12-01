@@ -3,14 +3,12 @@ import groupBy from 'lodash/groupBy';
 import type { ProductType } from './store.types';
 
 type Store = {
-  step: number;
   lineItems: ProductType[];
 };
 
 export const useCartStore = defineStore('cart', {
   state: (): Store => {
     return {
-      step: 0,
       lineItems: [] as ProductType[],
     };
   },
@@ -23,13 +21,17 @@ export const useCartStore = defineStore('cart', {
     groupLineItems: (state) => {
       return groupBy(state.lineItems, 'title');
     },
+    hasItems: (state) => {
+      return state.lineItems.length > 0;
+    },
   },
   actions: {
     addToCart(item: ProductType) {
       this.lineItems.push(item);
     },
     proceedToCheckout() {
-      this.step = 1;
+      console.log('proceedToCheckout');
+      return Promise.resolve();
     },
   },
 });

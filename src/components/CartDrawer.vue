@@ -1,7 +1,15 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
 import { useCartStore } from '../store';
 
+const router = useRouter();
 const cart = useCartStore();
+
+const gotoCheckout = () => {
+  cart.proceedToCheckout().then(() => {
+    router.push('/checkout');
+  });
+};
 </script>
 
 <template>
@@ -23,7 +31,7 @@ const cart = useCartStore();
       id="proceed-to-checkout"
       class="btn bg-yellow border-0 hover:brightness-110"
       :disabled="cart.baseAmount === 0"
-      @click="cart.proceedToCheckout"
+      @click="gotoCheckout"
     >
       Proceed to Checkout
     </button>

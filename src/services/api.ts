@@ -1,5 +1,7 @@
-export const postData = ():Promise<boolean> => new Promise((resolve) => {
-  setTimeout(() => {
-    resolve(true);
-  }, 1500);
-});
+export const postData = (): Promise<boolean> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(true);
+    }, 1500);
+  });
+};
