@@ -17,7 +17,12 @@ const atSubmit = () => {
 </script>
 
 <template>
-  <section data-name="checkout" class="checkout" :data-loading="fetchCheckutSDK.isLoading">
+  <section
+    data-name="checkout"
+    class="checkout"
+    :class="{ loading: fetchCheckutSDK.isLoading }"
+    :data-loading="fetchCheckutSDK.isLoading"
+  >
     <form @submit.prevent="atSubmit">
       <div class="mb-3">
         <label class="mb-1 block">123@123.com</label>
@@ -31,13 +36,11 @@ const atSubmit = () => {
         submit
       </button>
     </form>
-    <h1 v-if="isSubmitSuccess" class="checkout__submit-success"> SubmitSuccess </h1>
+    <h1 v-if="isSubmitSuccess" class="checkout__submit-success">SubmitSuccess</h1>
   </section>
 </template>
 
 <style scoped>
-.checkout {
-}
 .checkout[data-loading='true']::after {
   content: 'Loading';
   text-align: center;
