@@ -42,16 +42,16 @@ const atSubmit = () => {
 
 <style scoped>
 .checkout[data-loading='true']::after {
-  content: 'Loading';
-  text-align: center;
-  font-size: 60px;
-  color: white;
-  display: block;
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
+  display: block;
   width: 100%;
   height: 100%;
+  font-size: 60px;
+  text-align: center;
+  color: white;
   background-color: #e67e22;
+  content: 'Loading';
 }
 </style>

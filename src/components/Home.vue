@@ -10,5 +10,3 @@ const CartDrawer = defineAsyncComponent(() => import('./CartDrawer.vue'));
   <CartDrawer />
   <Cart />
 </template>
-
-<style></style>
