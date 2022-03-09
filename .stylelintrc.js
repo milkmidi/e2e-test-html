@@ -1,5 +1,6 @@
+// https://ithelp.ithome.com.tw/articles/10232650
 module.exports = {
-  extends: ['stylelint-config-standard-scss', 'stylelint-config-sass-guidelines'],
+  extends: ['stylelint-config-standard-scss'],
   plugins: ['stylelint-scss', 'stylelint-order'],
   overrides: [
     {

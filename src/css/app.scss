@@ -19,6 +19,8 @@ section {
     z-index: 1;
     content: attr(data-name);
     pointer-events: none;
+
+    // width: 100px;
   }
 }
 .form-control {
