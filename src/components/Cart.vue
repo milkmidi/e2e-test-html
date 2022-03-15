@@ -13,7 +13,7 @@ const cartData = [
 
 <template>
   <section data-name="Cart">
-    <div class="flex flex-wrap -m-2">
+    <div class="-m-2 flex flex-wrap">
       <template v-for="item in cartData" :key="item.title">
         <div class="w-1/4 p-2">
           <CartItem

@@ -32,7 +32,7 @@ const atSubmit = () => {
         <label class="mb-1 block">password</label>
         <input id="checkout__password" v-model="password" type="password" class="form-control" />
       </div>
-      <button id="checkout__submit" type="submit" class="btn bg-primary text-white border-0 h-12 text-xl px-5">
+      <button id="checkout__submit" type="submit" class="btn h-12 border-0 bg-primary px-5 text-xl text-white">
         submit
       </button>
     </form>
@@ -41,7 +41,7 @@ const atSubmit = () => {
 </template>
 
 <style scoped>
-.checkout[data-loading='true']::after {
+.checkout[data-loading="true"]::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -52,6 +52,6 @@ const atSubmit = () => {
   text-align: center;
   color: white;
   background-color: #e67e22;
-  content: 'Loading';
+  content: "Loading";
 }
 </style>
