@@ -25,6 +25,6 @@ section {
 }
 .form-control {
   /* https://v1.tailwindcss.com/components/forms */
-  @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700l;
+  @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700;
   @apply leading-tight focus:outline-none focus:bg-white focus:border-purple-500;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors');
@@ -22,7 +23,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    plugin(({ addComponents }) => {
+    plugin(({ addComponents, addVariant, e }) => {
       addComponents({
         '.btn': {
           display: 'inline-flex',
@@ -41,6 +42,23 @@ module.exports = {
           'background-color': 'white',
           transition: 'all 0.2s',
         },
+      });
+      addVariant('data-active', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => `.${e(`data-active${separator}${className}`)}[data-active="true"]`);
+      });
+      // 登入後，會在 body 加上 logged-in class
+      addVariant('logged-in', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => `body.logged-in .${e(`logged-in${separator}${className}`)}`);
+      });
+
+      // https://tailwindcss.com/docs/plugins#complex-variants
+      addVariant('important', ({ container }) => {
+        container.walkRules((rule) => {
+          rule.selector = `.\\!${rule.selector.slice(1)}\\`;
+          rule.walkDecls((decl) => {
+            decl.important = true;
+          });
+        });
       });
     }),
   ],
