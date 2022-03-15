@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 section {
   position: relative;
   padding: 2rem 1rem 1rem;
@@ -13,17 +12,19 @@ section {
     left: 0;
     padding: 0.2rem;
     font-size: 16px;
-    color: white;
     font-weight: bold;
+    color: white;
     background-color: #27ae60;
     border-radius: 0.25rem;
     z-index: 1;
     content: attr(data-name);
     pointer-events: none;
+
+    // width: 100px;
   }
 }
-
 .form-control {
   /* https://v1.tailwindcss.com/components/forms */
-  @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500;
+  @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700;
+  @apply leading-tight focus:outline-none focus:bg-white focus:border-purple-500;
 }

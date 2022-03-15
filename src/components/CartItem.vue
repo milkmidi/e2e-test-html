@@ -1,5 +1,6 @@
 <script setup lang="ts">
-// eslint-disable-next-line no-undef
+import { defineProps } from 'vue';
+
 defineProps({
   title: {
     type: String,
@@ -13,9 +14,9 @@ defineProps({
 </script>
 
 <template>
-  <div class="border p-4 space-y-2">
+  <div class="space-y-2 border p-4">
     <h3 class="text-3xl font-bold">{{ title }}</h3>
     <h3 class="text-xl">${{ price }}</h3>
-    <button class="btn bg-info text-white border-0 hover:brightness-110"> ADD TO CART </button>
+    <button class="btn border-0 bg-info text-white hover:brightness-110"> ADD TO CART </button>
   </div>
 </template>

@@ -17,7 +17,12 @@ const atSubmit = () => {
 </script>
 
 <template>
-  <section data-name="checkout" class="checkout" :data-loading="fetchCheckutSDK.isLoading">
+  <section
+    data-name="checkout"
+    class="checkout"
+    :class="{ loading: fetchCheckutSDK.isLoading }"
+    :data-loading="fetchCheckutSDK.isLoading"
+  >
     <form @submit.prevent="atSubmit">
       <div class="mb-3">
         <label class="mb-1 block">123@123.com</label>
@@ -27,28 +32,26 @@ const atSubmit = () => {
         <label class="mb-1 block">password</label>
         <input id="checkout__password" v-model="password" type="password" class="form-control" />
       </div>
-      <button id="checkout__submit" type="submit" class="btn bg-primary text-white border-0 h-12 text-xl px-5">
+      <button id="checkout__submit" type="submit" class="btn h-12 border-0 bg-primary px-5 text-xl text-white">
         submit
       </button>
     </form>
-    <h1 v-if="isSubmitSuccess" class="checkout__submit-success"> SubmitSuccess </h1>
+    <h1 v-if="isSubmitSuccess" class="checkout__submit-success">SubmitSuccess</h1>
   </section>
 </template>
 
 <style scoped>
-.checkout {
-}
-.checkout[data-loading='true']::after {
-  content: 'Loading';
-  text-align: center;
-  font-size: 60px;
-  color: white;
-  display: block;
+.checkout[data-loading="true"]::after {
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
+  display: block;
   width: 100%;
   height: 100%;
+  font-size: 60px;
+  text-align: center;
+  color: white;
   background-color: #e67e22;
+  content: "Loading";
 }
 </style>

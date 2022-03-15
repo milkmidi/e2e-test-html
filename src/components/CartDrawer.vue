@@ -14,10 +14,10 @@ const gotoCheckout = () => {
 
 <template>
   <section data-name="CartDrawer" class="cart-drawer">
-    <h1 class="cart-drawer__base-amount text-2xl mb-2 font-bold">
+    <h1 class="cart-drawer__base-amount mb-2 text-2xl font-bold">
       baseAmount:<span>{{ cart.baseAmount }}</span>
     </h1>
-    <div class="space-y-2 mb-2">
+    <div class="mb-2 space-y-2">
       <template v-for="(item, key) in cart.groupLineItems" :key="key">
         <div class="cart-drawer__item border p-1">
           <h3>
@@ -29,7 +29,7 @@ const gotoCheckout = () => {
     </div>
     <button
       id="proceed-to-checkout"
-      class="btn bg-yellow border-0 hover:brightness-110"
+      class="btn border-0 bg-yellow hover:brightness-110"
       :disabled="cart.baseAmount === 0"
       @click="gotoCheckout"
     >
