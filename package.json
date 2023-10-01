@@ -8,6 +8,7 @@
     "start": "vite"
   },
   "dependencies": {
+    "dayjs": "^1.11.10",
     "lodash": "^4.17.21",
     "pinia": "^2.1.6",
     "vue": "^3.3.4",
