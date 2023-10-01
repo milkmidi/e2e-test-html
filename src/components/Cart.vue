@@ -13,17 +13,15 @@ const cartData = [
 
 <template>
   <section data-name="Cart">
-    <div class="-m-2 flex flex-wrap">
+    <div class="grid grid-cols-4 gap-3">
       <template v-for="item in cartData" :key="item.title">
-        <div class="w-1/4 p-2">
-          <CartItem
-            :data-sku="item.title"
-            :data-price="item.price"
-            :title="item.title"
-            :price="item.price"
-            @click="cart.addToCart(item)"
-          />
-        </div>
+        <CartItem
+          :data-sku="item.title"
+          :data-price="item.price"
+          :title="item.title"
+          :price="item.price"
+          @click="cart.addToCart(item)"
+        />
       </template>
     </div>
   </section>
