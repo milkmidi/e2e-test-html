@@ -1,5 +1,6 @@
 // https://prettier.io/docs/en/options.html
 module.exports = {
+  plugins: ['prettier-plugin-tailwindcss'],
   tailwindConfig: './tailwind.config.js',
   printWidth: 120,
   tabWidth: 2,

@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import useFetchData from '../hooks/useFetchData';
 import { postData } from '../services/api';
 
-const fetchCheckutSDK = useFetchData();
+const fetchCheckoutSDK = useFetchData();
 
 const isSubmitSuccess = ref(false);
 const email = ref('');
@@ -20,8 +20,8 @@ const atSubmit = () => {
   <section
     data-name="checkout"
     class="checkout"
-    :class="{ loading: fetchCheckutSDK.isLoading }"
-    :data-loading="fetchCheckutSDK.isLoading"
+    :class="{ loading: fetchCheckoutSDK.isLoading }"
+    :data-loading="fetchCheckoutSDK.isLoading"
   >
     <form @submit.prevent="atSubmit">
       <div class="mb-3">
@@ -41,7 +41,7 @@ const atSubmit = () => {
 </template>
 
 <style scoped>
-.checkout[data-loading="true"]::after {
+.checkout[data-loading='true']::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -52,6 +52,6 @@ const atSubmit = () => {
   text-align: center;
   color: white;
   background-color: #e67e22;
-  content: "Loading";
+  content: 'Loading';
 }
 </style>

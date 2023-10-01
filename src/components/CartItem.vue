@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
-
 defineProps({
   title: {
     type: String,
@@ -14,9 +12,9 @@ defineProps({
 </script>
 
 <template>
-  <div class="space-y-2 border p-4">
+  <section class="space-y-2 my-0" data-name="CartItem">
     <h3 class="text-3xl font-bold">{{ title }}</h3>
     <h3 class="text-xl">${{ price }}</h3>
     <button class="btn border-0 bg-info text-white hover:brightness-110"> ADD TO CART </button>
-  </div>
+  </section>
 </template>
