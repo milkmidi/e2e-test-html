@@ -1,22 +1,27 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "esModuleInterop": true,
     "importHelpers": true,
     "module": "esnext",
     "moduleResolution": "bundler",
-    "strict": true,
-    "sourceMap": false,
-    "skipLibCheck": true,
-    "target": "esnext",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
     "isolatedModules": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "ESNext",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
-    "types": [],
     "lib": ["dom", "esnext"]
   },
   "include": [
@@ -24,7 +29,8 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "src/**/*.d.ts",
-    "src/env.d.ts"
+    "src/env.d.ts",
+    "types/global.d.ts"
   ],
   "exclude": [ "node_modules", "dist" ],
   "references": [{ "path": "./tsconfig.node.json" }]

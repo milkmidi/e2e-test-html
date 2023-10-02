@@ -15,7 +15,5 @@ createApp(App)
   .use(createPinia())
   .mount('#app');
 
-// @ts-ignore
 console.info(`%c${process.env.BUILD_INFO}`, 'background:#00cec9;color:white;font-size:20px;');
-// @ts-ignore
 document.documentElement.setAttribute('data-build-info', process.env.BUILD_INFO);

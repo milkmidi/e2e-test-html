@@ -23,19 +23,25 @@ const getGitSha = () => {
 //
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: './',
-  plugins: [vue()],
-  server: {
-    port: 3000,
-  },
-  define: {
-    'process.env.BUILD_INFO': JSON.stringify(`${getBuildTimestamp()}-${getGitSha()}`),
-    'process.env.BUILD_TIMESTAMP': JSON.stringify(getBuildTimestamp()),
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
+export default defineConfig(({ mode }) => {
+  const buildTimestamp = getBuildTimestamp();
+  const gitSha = getGitSha();
+  return {
+    base: './',
+    plugins: [vue()],
+    server: {
+      port: 3000,
     },
-  },
+    define: {
+      'process.env.NODE_ENV': JSON.stringify(mode),
+      'process.env.BUILD_INFO': JSON.stringify(`${buildTimestamp}-${gitSha}`),
+      'process.env.BUILD_TIMESTAMP': JSON.stringify(buildTimestamp),
+      'process.env.BUILD_GIT_SHA': JSON.stringify(gitSha),
+    },
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './src'),
+      },
+    },
+  };
 });

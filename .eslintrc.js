@@ -58,5 +58,6 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'vue/attribute-hyphenation': 0,
   },
 };

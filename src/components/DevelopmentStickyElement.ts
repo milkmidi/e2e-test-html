@@ -13,7 +13,7 @@ template.innerHTML = `
     color: black;
     pointer-events: none;
     width: 240px;
-    transform: rotate(-45deg) translate(-80px, -25px);
+    transform: rotate(-45deg) translate(-70px, -20px);
     text-align: center;
     transform-origin: center center;
     box-shadow: 0 0 10px black;
@@ -22,13 +22,14 @@ template.innerHTML = `
 </style>
 <div id="text"></div>
 `;
+
 class DevelopmentStickyElement extends HTMLElement {
   constructor() {
     super();
     const shadowRoot = this.attachShadow({ mode: 'open' });
     shadowRoot.appendChild(template.content.cloneNode(true));
     const text = shadowRoot.querySelector('#text') as HTMLElement;
-    text.textContent = `${process.env.BUILD_TIMESTAMP}`;
+    text.innerHTML = `${process.env.BUILD_TIMESTAMP}<br/>${process.env.BUILD_GIT_SHA}`;
   }
 }
 window.customElements.define('development-sticky-element', DevelopmentStickyElement);
