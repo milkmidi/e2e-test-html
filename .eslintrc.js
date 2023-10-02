@@ -33,6 +33,7 @@ module.exports = {
     'no-debugger': 0,
     'no-plusplus': 0,
     'import/no-extraneous-dependencies': 0,
+    '@typescript-eslint/ban-ts-comment': 0,
     '@typescript-eslint/no-unused-vars': [
       'error',
       {

@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "importHelpers": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "strict": true,
     "sourceMap": false,
     "skipLibCheck": true,
@@ -17,12 +17,7 @@
       ]
     },
     "types": [],
-    "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.Iterable",
-      "ScriptHost"
-    ]
+    "lib": ["dom", "esnext"]
   },
   "include": [
     "src/**/*.ts",
@@ -31,7 +26,6 @@
     "src/**/*.d.ts",
     "src/env.d.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": [ "node_modules", "dist" ],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

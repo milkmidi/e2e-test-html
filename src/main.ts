@@ -4,6 +4,7 @@ import { createPinia } from 'pinia';
 //
 import App from './App.vue';
 import router from './router';
+import './components/DevelopmentStickyElement';
 //
 import './css/app.scss';
 import './css/style.scss';
@@ -15,6 +16,6 @@ createApp(App)
   .mount('#app');
 
 // @ts-ignore
-console.info(`%c${process.env.BUILD_TIMESTAMP}`, 'background:#00cec9;color:white;font-size:20px;');
+console.info(`%c${process.env.BUILD_INFO}`, 'background:#00cec9;color:white;font-size:20px;');
 // @ts-ignore
-document.documentElement.setAttribute('data-build-info', process.env.BUILD_TIMESTAMP);
+document.documentElement.setAttribute('data-build-info', process.env.BUILD_INFO);

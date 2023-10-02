@@ -2,10 +2,9 @@
   "name": "vite-project",
   "version": "0.0.0",
   "scripts": {
-    "serve": "vite preview",
+    "start": "vite",
     "build": "vite build",
-    "lint": "vue-cli-service lint",
-    "start": "vite"
+    "preview": "vite preview"
   },
   "dependencies": {
     "dayjs": "^1.11.10",
@@ -16,6 +15,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.199",
+    "@types/node": "^20.8.0",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
     "@vitejs/plugin-vue": "^4.3.4",

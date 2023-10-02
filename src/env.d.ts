@@ -10,6 +10,6 @@ declare module '*.vue' {
 declare namespace NodeJS {
   interface ProcessEnv {
     readonly NODE_ENV: 'development' | 'production';
-    readonly BUILD_TIMESTAMP: string;
+    readonly BUILD_INFO: string;
   }
 }
