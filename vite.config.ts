@@ -43,5 +43,19 @@ export default defineConfig(({ mode }) => {
         '@': path.resolve(__dirname, './src'),
       },
     },
+    build: {
+      rollupOptions: {
+        // https://rollupjs.org/guide/en/#input
+        input: {
+          main: './src/main.ts',
+          'my-header': './src/components/my-header.ts',
+        },
+        output: {
+          entryFileNames: 'assets/[name].min.js',
+          chunkFileNames: 'assets/[name].chunk.min.js',
+          assetFileNames: 'assets/[name].min[extname]',
+        },
+      },
+    },
   };
 });

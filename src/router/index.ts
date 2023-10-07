@@ -11,6 +11,10 @@ const routes: RouteRecordRaw[] = [
     path: '/checkout',
     component: defineAsyncComponent(() => import('../components/Checkout.vue')),
   },
+  {
+    path: '/test',
+    component: defineAsyncComponent(() => import('../components/Test.vue')),
+  },
 ];
 
 const router = createRouter({
