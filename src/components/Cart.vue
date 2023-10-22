@@ -10,6 +10,7 @@ const cartData = ref<Product[]>([]);
 onMounted(() => {
   getProductList().then((data) => {
     cartData.value = data;
+    console.log(JSON.stringify(data));
   });
 });
 </script>
