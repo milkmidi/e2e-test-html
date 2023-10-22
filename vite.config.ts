@@ -4,7 +4,8 @@ import vue from '@vitejs/plugin-vue';
 import dayjs from 'dayjs';
 import path from 'path';
 
-const TIMEZONE_SHIFT_MS = new Date('2016/01/01').getTime() - new Date('2016-01-01T00:00:00+08:00').getTime();
+const TIMEZONE_SHIFT_MS =
+  new Date('2016/01/01').getTime() - new Date('2016-01-01T00:00:00+08:00').getTime();
 const getDateNow = () => new Date(Date.now() + TIMEZONE_SHIFT_MS);
 const getBuildTimestamp = (format = 'YYYY-MM-DD HH:mm:ss') => {
   return dayjs(getDateNow()).format(format);
@@ -24,6 +25,7 @@ const getGitSha = () => {
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
+  const DEV_MODE = mode === 'development';
   const buildTimestamp = getBuildTimestamp();
   const gitSha = getGitSha();
   return {
@@ -33,6 +35,7 @@ export default defineConfig(({ mode }) => {
       port: 3000,
     },
     define: {
+      'process.env.PUBLIC_PATH': JSON.stringify(DEV_MODE ? '' : '/e2e-test-html'),
       'process.env.NODE_ENV': JSON.stringify(mode),
       'process.env.BUILD_INFO': JSON.stringify(`${buildTimestamp}-${gitSha}`),
       'process.env.BUILD_TIMESTAMP': JSON.stringify(buildTimestamp),

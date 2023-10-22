@@ -2,7 +2,7 @@
 module.exports = {
   plugins: ['prettier-plugin-tailwindcss'],
   tailwindConfig: './tailwind.config.js',
-  printWidth: 120,
+  printWidth: 100,
   tabWidth: 2,
   useTabs: false,
   semi: true, // 未尾逗號

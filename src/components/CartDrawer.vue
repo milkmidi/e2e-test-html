@@ -29,7 +29,7 @@ const gotoCheckout = () => {
     </div>
     <button
       id="proceed-to-checkout"
-      class="btn border-0 bg-yellow hover:brightness-110"
+      class="btn-error btn"
       :disabled="cart.baseAmount === 0"
       @click="gotoCheckout"
     >

@@ -4,6 +4,9 @@ const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors');
 
 module.exports = {
+  daisyui: {
+    themes: ['lemonade', 'emerald'],
+  },
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   // darkMode: false, // or 'media' or 'class'
   theme: {
@@ -22,8 +25,9 @@ module.exports = {
     extend: {},
   },
   plugins: [
+    require('daisyui'),
     plugin(({ addComponents, addVariant, e }) => {
-      addComponents({
+      /* addComponents({
         '.btn': {
           display: 'inline-flex',
           'justify-content': 'center',
@@ -41,13 +45,17 @@ module.exports = {
           'background-color': 'white',
           transition: 'all 0.2s',
         },
-      });
+      }); */
       addVariant('data-active', ({ modifySelectors, separator }) => {
-        modifySelectors(({ className }) => `.${e(`data-active${separator}${className}`)}[data-active="true"]`);
+        modifySelectors(
+          ({ className }) => `.${e(`data-active${separator}${className}`)}[data-active="true"]`,
+        );
       });
       // 登入後，會在 body 加上 logged-in class
       addVariant('logged-in', ({ modifySelectors, separator }) => {
-        modifySelectors(({ className }) => `body.logged-in .${e(`logged-in${separator}${className}`)}`);
+        modifySelectors(
+          ({ className }) => `body.logged-in .${e(`logged-in${separator}${className}`)}`,
+        );
       });
 
       // https://tailwindcss.com/docs/plugins#complex-variants

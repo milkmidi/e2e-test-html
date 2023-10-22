@@ -1,29 +1,24 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
 import CartItem from './CartItem.vue';
 import { useCartStore } from '../store';
+import { type Product, getProductList } from '@/services/api';
 
 const cart = useCartStore();
 
-const cartData = [
-  { title: 'HW0109', price: 200, availableStock: 2 },
-  { title: 'HW0110', price: 300, availableStock: 3 },
-  { title: 'HW0111', price: 100, availableStock: 4 },
-];
+const cartData = ref<Product[]>([]);
+onMounted(() => {
+  getProductList().then((data) => {
+    cartData.value = data;
+  });
+});
 </script>
 
 <template>
   <section data-name="Cart">
     <div class="grid grid-cols-4 gap-3">
       <template v-for="item in cartData" :key="item.title">
-        <CartItem
-          :data-sku="item.title"
-          :data-price="item.price"
-          :data-available-stock="item.availableStock"
-          :title="item.title"
-          :price="item.price"
-          :availableStock="item.availableStock"
-          @click="cart.addToCart(item)"
-        />
+        <CartItem v-bind="item" @click="cart.addToCart(item)" />
       </template>
     </div>
   </section>
