@@ -4,7 +4,8 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "git checkout main && git merge dev && git push && git checkout dev"
   },
   "dependencies": {
     "dayjs": "^1.11.10",
