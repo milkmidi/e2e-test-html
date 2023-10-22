@@ -49,10 +49,10 @@ export default defineConfig(({ mode }) => {
     build: {
       rollupOptions: {
         // https://rollupjs.org/guide/en/#input
-        input: {
+        /* input: {
           main: './src/main.ts',
           'my-header': './src/components/my-header.ts',
-        },
+        }, */
         output: {
           entryFileNames: 'assets/[name].min.js',
           chunkFileNames: 'assets/[name].chunk.min.js',
