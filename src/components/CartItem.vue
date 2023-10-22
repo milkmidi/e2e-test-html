@@ -5,7 +5,12 @@ const props = defineProps<Product>();
 </script>
 
 <template>
-  <section class="my-0 space-y-2" data-name="CartItem" :data-sku="props.sku">
+  <section
+    class="my-0 space-y-2"
+    data-name="CartItem"
+    :data-sku="props.sku"
+    :data-price="props.price"
+  >
     <h3 class="text-3xl font-bold">
       {{ props.title }}
       <span class="badge badge-primary badge-outline text-xs">{{ props.sku }}</span>
